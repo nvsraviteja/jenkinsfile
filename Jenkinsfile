@@ -1,20 +1,39 @@
 pipeline {
     agent any
+    
     stages {
-        stage('permision') { 
+        stage('permission') {
             steps {
-                sh 'chmod +x ./script.sh'
-                }
-        }
-        stage('failed'){
-            steps{
-                sh 'exit 1'
+                echo 'Building...'
+                sh 'chmod +x ./script.sh"'
             }
         }
-        stage('execution'){
-            steps{
+        
+        stage('execute') {
+            steps {
+                echo 'Testing...'
+                // This command will fail because 'exit 1' returns a non-zero exit code
                 sh './script.sh'
             }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                sh 'exit 1"'
+            }
+        }
+    }
+    
+    post {
+        always {
+            echo 'This will always run, even if the pipeline fails.'
+        }
+        success {
+            echo 'This will run only if the pipeline succeeds.'
+        }
+        failure {
+            echo 'This will run only if the pipeline fails.'
         }
     }
 }
