@@ -5,8 +5,10 @@ pipeline {
             steps {
                 sh 'chmod +x ./script.sh'
             }
-            stage('execution'){
+        stage('execution'){
+            steps{
                 sh './script.sh'
+            
             }
         }
     }
