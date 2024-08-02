@@ -5,7 +5,7 @@ pipeline {
         stage('permission') {
             steps {
                 echo 'Building...'
-                sh 'chmod +x ./script.sh"'
+                sh 'chmod +x ./script.sh'
             }
         }
         
@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'exit 1"'
+                sh 'exit 1'
             }
         }
     }
