@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                 chmod +x ./script.sh
-                ./script.sh
+                sh ./script.sh
             }
         }
 
