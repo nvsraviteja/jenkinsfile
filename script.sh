@@ -1,3 +1,4 @@
+#!/bin/bash
 echo 
 echo please chose one of the options below
 echo
