@@ -13,14 +13,14 @@ pipeline {
             steps {
                 echo 'Testing...'
                 // This command will fail because 'exit 1' returns a non-zero exit code
-                sh './script.sh'
+                sh 'exit 1'
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'exit 1'
+                sh './script.sh'
             }
         }
     }
