@@ -6,6 +6,11 @@ pipeline {
                 sh 'chmod +x ./script.sh'
                 }
         }
+        stage('failed'){
+            steps{
+                sh 'exit 1'
+            }
+        }
         stage('execution'){
             steps{
                 sh './script.sh'
